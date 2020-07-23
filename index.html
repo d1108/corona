@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Corona</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<!--full body size-->
+<div class="full">
+	<!--navbar button starts-->
+      <div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  	<a href="#">About</a>
+  	<a href="#">Services</a>
+  	<a href="#">Clients</a>
+  	<a href="#">Contact</a>
+	</div>
+	<!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">..</span>-->
+	<div class="navbarbutton" id="mynav" style="cursor: pointer;" onclick="openNav()">
+      	<i class="fa fa-circle" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-circle" aria-hidden="true"></i>
+      	<br>
+      	<i class="fa fa-circle" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-circle" aria-hidden="true"></i>
+      </div>
+      <!--navbar button ends-->
+      <!--insta and fb logo starts-->
+      <div class="instalogo">
+      	<a href="" style="color: white"><i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+      </div>
+      <!--insta and fb logo ends-->
+	<!--carousel area starts-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- indicator -->
+  <ul class="carousel-indicators">
+    <li class="item1" id="1" style="background-color: #c1cef8"></li>
+    <li class="item2" id="2"></li>
+    <li class="item3" id="3"></li>
+  </ul>
+  
+  <!-- images -->
+  <div class="carousel-inner">
+ <div class="carousel-item active" id="01">
+      <img src="images/blue.png" style="background-size: cover;">
+      <!--start first page design here-->
+      
+    </div>
+    <div class="carousel-item" id="02">
+      <img src="images/green.png" style="background-size: cover;">
+      <!--start second page design here-->
+      <!-- about us area-->
+      <div class="text-logo-area">
+      	<h1>About<img src="images/bottle.png" class="bottlesize">Us</h1>
+      	<!-- parah-->
+      	<div class="parah">
+      		We have just come up with
+      		<br>
+      		this idea to bring to you all
+      		<br>
+      		the neccesary things at this
+      		<br>
+      		time at a cheaper rate.
+      	</div>
+      </div>
+      <!-- about us area ends-->
+    </div>
+    <div class="carousel-item" id="03">
+      <img src="images/blue.png" style="background-size: cover;">
+      <!--start third page design here-->
+      
+    </div>
+  </div>
+  
+  <!-- left and right  -->
+  <a class="carousel-control-prev" href="#myCarousel" style="display: none;">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" style="display: none;">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+  // start carousel
+  $("#myCarousel").carousel("pause");
+  // start indicators
+  $(".item1").click(function(){
+    $("#myCarousel").carousel(0);
+  });
+  $(".item2").click(function(){
+    $("#myCarousel").carousel(1);
+  });
+  $(".item3").click(function(){
+    $("#myCarousel").carousel(2);
+  });
+    
+  // start next prev
+  $(".carousel-control-prev").click(function(){
+    $("#myCarousel").carousel("prev");
+  });
+  $(".carousel-control-next").click(function(){
+    $("#myCarousel").carousel("next");
+  });
+});
+//when the next slide comes events
+$("#myCarousel").on('slide.bs.carousel', function(event){
+    var a = event.relatedTarget.id;
+    if(a == '01'){
+    	document.getElementById('1').style.backgroundColor = "#c1cef8";
+    	document.getElementById('2').style.backgroundColor = "white";
+    	document.getElementById('3').style.backgroundColor = "white";
+    	}
+    if(a == '02'){
+    	document.getElementById('2').style.backgroundColor = "#336600";
+    	document.getElementById('1').style.backgroundColor = "white";
+    	document.getElementById('3').style.backgroundColor = "white";
+    }
+    if(a == '03'){
+    	document.getElementById('1').style.backgroundColor = "white";
+    	document.getElementById('2').style.backgroundColor = "white";
+    	document.getElementById('3').style.backgroundColor = "#c1cef8";
+    }
+ });
+</script>
+<!--sidenav script-->
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mynav").style.display = "none";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  setTimeout(function(){document.getElementById("mynav").style.display = "block";}, 650);
+}
+</script>
+<style type="text/css">
+	html,body{
+		width: 100%;
+		height: 100%;
+
+	}
+	.full{
+		width: 100%;
+		height: 100%;
+	}
+	.carousel,.item,.active{
+   		height:100%;
+   
+    }
+	.carousel-inner{
+    	height:100%;
+   
+	}
+	.carousel-indicators li {
+  		width: 30px;
+  		height: 30px;
+  		border-radius: 100%;
+  		background-color: white;
+  		opacity: 100%;
+	}
+	@font-face {
+  	font-family: freestyle;
+  	src: url(fonts/FREESCPT.TTF);
+  	}
+	.navbarbutton{
+		top: 30px;
+		left: 30px;
+		width: auto;
+		height: auto;
+		position: absolute;
+		color: white;
+		z-index: 10;
+	}
+	.instalogo{
+		color: white;
+		top: 30px;
+		right: 30px;
+		position: absolute;
+		height: auto;
+		width: auto;
+		font-size: 30px;
+		z-index: 10;
+	}
+	.text-logo-area{
+		position: absolute;
+		top: 50px;
+		font-family: freestyle;
+		color: white;
+		width: 100%;
+		text-align: center;
+
+	}
+	.text-logo-area h1{
+		font-size: 90px;
+	}
+	.bottlesize{
+		height: 200px;
+	}
+	.parah{
+		font-size: 50px;
+	}
+	.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.7);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</body>
+</html>
